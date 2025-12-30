@@ -38,8 +38,11 @@ export function Navigation() {
       )}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
+        {/* <Link href="/" className="z-50 relative">
+          <img src="/hqai-logo.png" alt="HQAI Technologies" className="h-8 md:h-10 w-auto" />
+        </Link> */}
         <Link href="/" className="text-xl md:text-2xl font-bold font-display tracking-tight text-white z-50 relative">
-          HQAI<span className="text-white/40">.TECH</span>
+          HQAI<span className="text-white/40"> Technologies</span>
         </Link>
 
         {/* Desktop Nav */}
@@ -99,7 +102,7 @@ export function Navigation() {
                   {link.name}
                 </a>
               ))}
-              <a
+              {/* <a
                 href="/api/download-code"
                 download="hqai-website.zip"
                 className="flex items-center gap-2 px-4 py-3 text-center font-semibold rounded-lg bg-white/5 border border-white/10 text-white hover:bg-white/10"
@@ -107,7 +110,7 @@ export function Navigation() {
               >
                 <Download size={18} />
                 Download Code
-              </a>
+              </a> */}
               <a
                 href="#contact"
                 onClick={(e) => handleScrollTo(e, "#contact")}

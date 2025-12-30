@@ -82,14 +82,17 @@ export default function Home() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <span className="inline-block px-3 py-1 mb-6 text-xs font-semibold tracking-wide uppercase rounded-full bg-white/5 text-white/70 border border-white/10 backdrop-blur-sm">
-              The Future of Digital
+              The Future of AI
             </span>
             <h1 className="mb-6 text-5xl font-bold tracking-tight md:text-7xl lg:text-8xl font-display text-white">
-              Modern. Fast. <br />
-              <span className="text-gradient">Custom AI Solutions.</span>
+              HQAI Technologies <br />
+              {/* <span className="text-gradient">Custom AI Solutions.</span> */}
             </h1>
-            <p className="mx-auto max-w-2xl text-lg text-muted-foreground md:text-xl leading-relaxed">
+            {/* <p className="mx-auto max-w-2xl text-lg text-muted-foreground md:text-xl leading-relaxed">
               We build high-quality, high-performance digital products for the next generation of businesses. Minimalist design, maximalist impact.
+            </p> */}
+            <p className="mx-auto max-w-2xl text-lg text-muted-foreground md:text-xl leading-relaxed">
+              Empowering Businesses with Intelligent AI Solutions
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
@@ -114,7 +117,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-24 md:py-32 border-t border-white/5 bg-background/50">
+      <section id="about" className="py-20 md:py-32 border-t border-white/5 bg-background/50">
         <div className="container px-4 md:px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -124,7 +127,7 @@ export default function Home() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl mb-6">
-                Why HQAI?
+                Why HQAI Technologies?
               </h2>
               <div className="w-12 h-1 bg-white/20 mb-8" />
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
@@ -134,7 +137,7 @@ export default function Home() {
                 We combine cutting-edge AI technology with premium design aesthetics to create products that stand out. No bloat, no clutter—just pure performance.
               </p>
             </motion.div>
-            <motion.div
+             {/* <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -143,15 +146,33 @@ export default function Home() {
             >
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10" />
               <div className="h-full w-full rounded-xl bg-background/40 flex items-center justify-center border border-white/5">
-                <span className="text-4xl font-display font-bold text-white/20">HQAI</span>
+                <span className="text-4xl font-display font-bold text-white/20">HQAI Technologies</span>
               </div>
-            </motion.div>
+            </motion.div> */}
+            {/* <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative aspect-video rounded-2xl overflow-hidden glass-card p-2"
+            >
+              <video 
+                className="h-full w-full rounded-xl object-contain bg-background/40"
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+              >
+                <source src="/brand-video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </motion.div> */}
           </div>
         </div>
       </section>
 
       {/* Products Section */}
-      <section id="products" className="py-24 md:py-32">
+      <section id="products" className="py-20 md:py-32">
         <div className="container px-4 md:px-6">
           <div className="mb-16 md:text-center max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-5xl mb-6">Our Products</h2>

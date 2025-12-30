@@ -8,7 +8,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
           <div className="md:col-span-2">
             <Link href="/" className="text-2xl font-bold font-display tracking-tight text-white">
-              HQAI<span className="text-white/40">.TECH</span>
+              HQAI Technologies
             </Link>
             <p className="mt-4 max-w-sm text-muted-foreground text-sm leading-relaxed">
               Building the future with high-quality AI solutions and modern web technologies. Fast, custom, and scalable.

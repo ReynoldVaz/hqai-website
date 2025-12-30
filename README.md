@@ -1,4 +1,4 @@
-# HQAI Website
+# HQAI Technologies Website
 
 A full-stack website built with React, Express, and TypeScript.
 
