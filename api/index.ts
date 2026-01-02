@@ -1,9 +1,15 @@
 import express, { type Request, Response, NextFunction } from "express";
-import { registerRoutes } from "../server/routes";
 import path from "path";
 import { fileURLToPath } from "url";
 
 const app = express();
+
+// Mock storage (inline the data)
+const mockStorage = {
+  getProducts: async () => [],
+  getServices: async () => [],
+  getEvents: async () => []
+};
 
 declare module "http" {
   interface IncomingMessage {
@@ -63,7 +69,26 @@ let isInitialized = false;
 async function initialize() {
   if (isInitialized) return;
   
-  await registerRoutes(null as any, app);
+  // Register API routes
+  app.get("/api/products", async (_req, res) => {
+    const products = await mockStorage.getProducts();
+    res.json(products);
+  });
+
+  app.get("/api/services", async (_req, res) => {
+    const services = await mockStorage.getServices();
+    res.json(services);
+  });
+
+  app.get("/api/events", async (_req, res) => {
+    const events = await mockStorage.getEvents();
+    res.json(events);
+  });
+
+  app.post("/api/contact", async (req, res) => {
+    console.log("Contact form submitted:", req.body);
+    res.json({ success: true });
+  });
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
