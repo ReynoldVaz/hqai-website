@@ -76,13 +76,40 @@ async function initialize() {
   // Serve static files in production
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = path.dirname(__filename);
-  const publicPath = path.join(__dirname, "..", "dist", "public");
+  
+  // Try multiple possible paths for the public directory
+  const possiblePaths = [
+    path.join(__dirname, "..", "dist", "public"),
+    path.join(process.cwd(), "dist", "public"),
+    path.join(__dirname, "public"),
+  ];
+  
+  let publicPath = possiblePaths[0];
+  for (const p of possiblePaths) {
+    try {
+      const fs = await import("fs");
+      if (fs.existsSync(p)) {
+        publicPath = p;
+        console.log(`Found public directory at: ${publicPath}`);
+        break;
+      }
+    } catch (e) {
+      console.log(`Path not found: ${p}`);
+    }
+  }
   
   app.use(express.static(publicPath));
   
   // Catch-all route for SPA
   app.get("*", (_req, res) => {
-    res.sendFile(path.join(publicPath, "index.html"));
+    const indexPath = path.join(publicPath, "index.html");
+    console.log(`Serving index.html from: ${indexPath}`);
+    res.sendFile(indexPath, (err) => {
+      if (err) {
+        console.error(`Error serving index.html:`, err);
+        res.status(500).send("Internal Server Error");
+      }
+    });
   });
   
   isInitialized = true;

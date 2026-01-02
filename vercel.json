@@ -3,14 +3,14 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist/public",
   "framework": null,
-  "rewrites": [
+  "routes": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/index"
+      "src": "/api/(.*)",
+      "dest": "/api/index"
     },
     {
-      "source": "/(.*)",
-      "destination": "/api/index"
+      "src": "/(.*)",
+      "dest": "/api/index"
     }
   ]
 }
