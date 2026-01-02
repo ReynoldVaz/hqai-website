@@ -21,6 +21,7 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 import { handleSmoothScroll } from "@/lib/scroll-utils";
+import { useEffect } from "react";
 
 // Form Schema
 const contactSchema = z.object({
@@ -45,6 +46,21 @@ export default function Home() {
       message: "",
     },
   });
+
+  // Handle hash navigation on mount
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      // Use requestAnimationFrame to ensure DOM is ready
+      requestAnimationFrame(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          // Scroll instantly without smooth behavior to avoid the jump
+          element.scrollIntoView({ behavior: "auto" });
+        }
+      });
+    }
+  }, []);
 
   const onSubmit = async (data: ContactFormValues) => {
     try {
@@ -103,85 +119,52 @@ export default function Home() {
               >
                 View Our Work
               </a>
-              <a
+              {/* <a
                 href="#contact"
                 onClick={(e) => handleSmoothScroll(e, "#contact")}
                 className="w-full sm:w-auto px-8 py-4 text-sm font-bold rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-all hover:scale-105 active:scale-95"
                 data-testid="button-contact-us"
               >
                 Contact Us
-              </a>
+              </a> */}
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 md:py-32 border-t border-white/5 bg-background/50">
-        <div className="container px-4 md:px-6">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl mb-6">
-                Why HQAI Technologies?
-              </h2>
-              <div className="w-12 h-1 bg-white/20 mb-8" />
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                In a world of noise, we prioritize clarity. Our mission is to deliver digital solutions that are not just functional, but exceptional.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                We combine cutting-edge AI technology with premium design aesthetics to create products that stand out. No bloat, no clutter—just pure performance.
-              </p>
-            </motion.div>
-             {/* <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative aspect-square md:aspect-video rounded-2xl overflow-hidden glass-card p-2"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10" />
-              <div className="h-full w-full rounded-xl bg-background/40 flex items-center justify-center border border-white/5">
-                <span className="text-4xl font-display font-bold text-white/20">HQAI Technologies</span>
-              </div>
-            </motion.div> */}
-            {/* <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative aspect-video rounded-2xl overflow-hidden glass-card p-2"
-            >
-              <video 
-                className="h-full w-full rounded-xl object-contain bg-background/40"
-                autoPlay 
-                loop 
-                muted 
-                playsInline
-              >
-                <source src="/brand-video.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </motion.div> */}
-          </div>
+      <section id="about" className="relative flex min-h-[50vh] items-center justify-center py-5 md:py-20 border-t border-white/5 bg-background/50 overflow-hidden">
+        <div className="container relative z-10 px-4 md:px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl mb-6">
+              Why HQAI Technologies?
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              In a world of noise, we prioritize clarity. At HQAI Technologies, our mission is to deliver AI-driven solutions and bespoke software integrations that are not just functional, but exceptional.
+            </p>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              We combine advanced AI technology with premium design aesthetics to create products that stand out through performance and reliability.
+            </p>
+          </motion.div>
         </div>
       </section>
 
       {/* Products Section */}
-      <section id="products" className="py-20 md:py-32">
-        <div className="container px-4 md:px-6">
-          <div className="mb-16 md:text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-5xl mb-6">Our Products</h2>
+      <section id="products" className="relative flex min-h-[50vh] items-center justify-center py-5 md:py-20 overflow-hidden">
+        <div className="container relative z-10 px-4 md:px-6 text-center">
+          <div>
+            <h2 className="text-3xl md:text-5xl mb-6">Current Projects</h2>
             <p className="text-muted-foreground text-lg">
-              Innovative platforms designed to solve real-world problems with elegance and efficiency.
+              Currently developing proprietary AI-driven communication tools and bespoke enterprise integrations. Project details available upon request.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {products?.map((product, index) => (
               <ProductCard
                 key={product.id}
@@ -189,12 +172,12 @@ export default function Home() {
                 {...product}
               />
             ))}
-          </div>
+          </div> */}
         </div>
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-24 md:py-32 border-t border-white/5 bg-background/50">
+      {/* <section id="services" className="py-24 md:py-32 border-t border-white/5 bg-background/50">
         <div className="container px-4 md:px-6">
           <div className="mb-16 md:text-center max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-5xl mb-6">Services</h2>
@@ -214,10 +197,10 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 md:py-32 relative overflow-hidden">
+      {/* <section id="contact" className="py-24 md:py-32 relative overflow-hidden">
         <div className="container px-4 md:px-6 relative z-10">
           <div className="max-w-xl mx-auto glass-card p-8 md:p-12 rounded-3xl border-white/10">
             <div className="text-center mb-10">
@@ -301,7 +284,7 @@ export default function Home() {
             </Form>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <Footer />
     </div>

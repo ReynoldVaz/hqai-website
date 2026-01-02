@@ -16,14 +16,21 @@ export function Navigation() {
   }, []);
 
   const navLinks = [
-    { name: "Products", href: "#products" },
-    { name: "Services", href: "#services" },
+    { name: "Current Projects", href: "#products" },
+    // { name: "Services", href: "#services" },
     { name: "About", href: "#about" },
   ];
 
   const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     setMobileMenuOpen(false);
+    
+    // If we're not on the home page, navigate there first
+    if (location !== "/") {
+      window.location.href = "/" + id;
+      return;
+    }
+    
     const element = document.querySelector(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -42,7 +49,7 @@ export function Navigation() {
           <img src="/hqai-logo.png" alt="HQAI Technologies" className="h-8 md:h-10 w-auto" />
         </Link> */}
         <Link href="/" className="text-xl md:text-2xl font-bold font-display tracking-tight text-white z-50 relative">
-          HQAI<span className="text-white/40"> Technologies</span>
+          HQAI<span className="text-white"> Technologies</span>
         </Link>
 
         {/* Desktop Nav */}
@@ -57,7 +64,7 @@ export function Navigation() {
               {link.name}
             </a>
           ))}
-          <a
+          {/* <a
             href="/api/download-code"
             download="hqai-website.zip"
             className="p-2.5 text-muted-foreground hover:text-white transition-colors"
@@ -72,7 +79,7 @@ export function Navigation() {
             className="px-5 py-2.5 text-sm font-semibold rounded-lg bg-white text-black hover:bg-white/90 transition-colors"
           >
             Start Project
-          </a>
+          </a> */}
         </div>
 
         {/* Mobile Toggle */}
@@ -111,13 +118,13 @@ export function Navigation() {
                 <Download size={18} />
                 Download Code
               </a> */}
-              <a
+              {/* <a
                 href="#contact"
                 onClick={(e) => handleScrollTo(e, "#contact")}
                 className="px-5 py-3 text-center font-semibold rounded-lg bg-white text-black hover:bg-white/90"
               >
                 Start Project
-              </a>
+              </a> */}
             </motion.div>
           )}
         </AnimatePresence>
