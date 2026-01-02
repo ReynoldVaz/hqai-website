@@ -3,11 +3,6 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist/public",
   "framework": null,
-  "functions": {
-    "api/index.js": {
-      "includeFiles": "dist/public/**"
-    }
-  },
   "routes": [
     {
       "src": "/api/(.*)",
