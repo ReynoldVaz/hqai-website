@@ -89,11 +89,11 @@ export default function PrivacyPolicy() {
 
                         <h3 className="text-xl font-semibold text-white mb-3 mt-6">Data Retention</h3>
                         <p className="mb-4">
-                            Personal data is retained only for the duration necessary to fulfill the intended service purpose.
+                            Personal data is retained only for the duration necessary to fulfill the intended service purpose. Technical logs are retained for one-year period to ensure system security and regulatory compliance.
                         </p>
-                        <p className="mb-4">
+                        {/* <p className="mb-4">
                             Technical and security logs are retained for a mandatory period of one (1) year for audit and security compliance, after which they are securely erased or anonymized.
-                        </p>
+                        </p> */}
 
                         <h3 className="text-xl font-semibold text-white mb-3 mt-6">No Sale of Personal Data</h3>
                         <p>
