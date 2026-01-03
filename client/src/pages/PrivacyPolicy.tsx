@@ -14,7 +14,7 @@ export default function PrivacyPolicy() {
                     <section>
                         <h2 className="text-2xl font-semibold text-white mb-4">1. Introduction & Data Fiduciary Identity</h2>
                         <p className="mb-4">
-                            HQAI Technologies ("we","us," or "our") acts as a Data Fiduciary under the Digital Personal Data Protection (DPDP) Act, 2023, and the DPDP Rules, 2025. We are committed to processing personal data in a lawful, fair, and transparent manner, in accordance with applicable Indian laws.
+                            HQAI Technologies ("we","us", or "our") acts as a Data Fiduciary under the Digital Personal Data Protection (DPDP) Act, 2023, and the DPDP Rules, 2025. We are committed to processing personal data in a lawful, fair, and transparent manner, in accordance with applicable Indian laws.
                         </p>
                         <p>
                             Our services are intended for professional and business use only and are not directed at individuals under the age of 18.
