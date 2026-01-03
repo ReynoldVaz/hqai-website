@@ -8,13 +8,13 @@ export default function PrivacyPolicy() {
 
             <div className="container mx-auto px-4 md:px-6 py-24 md:py-32 max-w-4xl">
                 <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">Privacy Policy for HQAI Technologies</h1>
-                <p className="text-muted-foreground mb-12">Last Updated: December 2025</p>
+                <p className="text-muted-foreground mb-12">Last Updated: January 2026</p>
 
                 <div className="space-y-8 text-muted-foreground leading-relaxed">
                     <section>
                         <h2 className="text-2xl font-semibold text-white mb-4">1. Introduction & Data Fiduciary Identity</h2>
                         <p className="mb-4">
-                            HQAI Technologies ("we,"us" or "our") acts as a Data Fiduciary under the Digital Personal Data Protection (DPDP) Act, 2025. We are committed to processing personal data in a lawful, fair, and transparent manner, in accordance with applicable Indian laws.
+                            HQAI Technologies ("we","us," or "our") acts as a Data Fiduciary under the Digital Personal Data Protection (DPDP) Act, 2023, and the DPDP Rules, 2025. We are committed to processing personal data in a lawful, fair, and transparent manner, in accordance with applicable Indian laws.
                         </p>
                         <p>
                             Our services are intended for professional and business use only and are not directed at individuals under the age of 18.
@@ -39,7 +39,7 @@ export default function PrivacyPolicy() {
                             <strong>Lawful Basis of Processing:</strong>
                         </p>
                         <p>
-                            Personal data is processed on the basis of explicit user consent, contractual necessity, and legitimate business purposes, as permitted under the DPDP Act, 2025.
+                            Personal data is processed on the basis of explicit user consent, contractual necessity, and legitimate business purposes, as permitted under the DPDP Act, 2023, and the DPDP Rules, 2025.
                         </p>
                     </section>
 
